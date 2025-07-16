@@ -1,191 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OsifyAI Presentation</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OsifyAI Presentation</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    html, body {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background: #000;
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
-    }
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #000;
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-    .slide {
-      position: absolute;
-      width: 100vw;
-      height: 100vh;
-      top: 0;
-      left: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 1s ease;
-      text-align: center;
-      padding: 3rem;
-      pointer-events: none;
-    }
+        .slide {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 1s ease;
+            text-align: center;
+            padding: 3rem;
+            pointer-events: none;
+        }
 
-    .slide.active {
-      opacity: 1;
-      pointer-events: auto;
-      z-index: 1;
-    }
+        .slide.active {
+            opacity: 1;
+            pointer-events: auto;
+            z-index: 1;
+        }
 
-    h1 {
-      font-size: 4rem;
-      margin-bottom: 1.5rem;
-    }
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
 
-    h2 {
-      font-size: 3rem;
-      margin-bottom: 1.5rem;
-    }
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
 
-    p {
-      font-size: 1.5rem;
-      max-width: 900px;
-      line-height: 2.2rem;
-    }
+        p {
+            font-size: 1.5rem;
+            max-width: 900px;
+            line-height: 2.2rem;
+        }
 
-    /* Navigation bar with counter in the middle */
-    .nav-bar {
-      position: fixed;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      z-index: 10;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-    }
+        /* Responsive Image Styling */
+        .slide img {
+            max-width: 80%;
+            max-height: 60vh;
+            margin: 1rem 0;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
 
-    .nav-bar button {
-      background: #111;
-      color: white;
-      border: 1px solid #444;
-      padding: 0.6rem 1rem;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 6px;
-      transition: background 0.3s ease;
-    }
+        .slide img:hover {
+            transform: scale(1.02);
+        }
 
-    .nav-bar button:hover {
-      background: #333;
-    }
+        .img-caption {
+            font-size: 1rem;
+            opacity: 0.6;
+            margin-top: -0.5rem;
+            margin-bottom: 1.5rem;
+        }
 
-    .counter {
-      font-size: 1.2rem;
-      opacity: 0.7;
-      min-width: 120px;
-      text-align: center;
-    }
-  </style>
+        .nav-bar {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-bar button {
+            background: #111;
+            color: white;
+            border: 1px solid #444;
+            padding: 0.6rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-bar button:hover {
+            background: #333;
+        }
+
+        .counter {
+            font-size: 1.2rem;
+            opacity: 0.7;
+            min-width: 120px;
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- Slides -->
-<div class="slide active">
-  <h1>OsifyAI</h1>
-  <p style="font-size: 2rem; opacity: 0.8;">AI-Powered Growth Monitoring for Ages 0–20</p>
-</div>
+    <!-- Slide 1 -->
+    <div class="slide active">
+        <h1>OsifyAI</h1>
+        <p style="font-size: 2rem; opacity: 0.8;">AI-Powered Growth Monitoring for Ages 0–20</p>
+    </div>
 
-<div class="slide">
-  <h2>🦴 Bone Age Prediction</h2>
-  <p>Upload radiology images and get bone age estimates from our deep learning model. Clinically validated for high accuracy.</p>
-</div>
+    <!-- Slide 2 -->
+    <div class="slide">
+        <h2>🦴 Bone Age Prediction</h2>
+        <p>Upload radiology images and get bone age estimates from our deep learning model. Clinically validated for
+            high accuracy.</p>
+        <img src="media/boneage.png" alt="Bone Age Output">
+        <div class="img-caption">Bone Age Inference from X-ray Image</div>
+    </div>
 
-<div class="slide">
-  <h2>🧪 OCR Lab Test Extraction</h2>
-  <p>Instantly extract structured test results from PDF/image lab reports. No manual input, just drag-and-drop.</p>
-</div>
+    <!-- Slide 3 -->
+    <div class="slide">
+        <h2>🧪 OCR Lab Test Extraction</h2>
+        <p>Extract structured test results from lab reports using AI-powered OCR. No manual input, just drag-and-drop.
+        </p>        
+        <img src="media/ocr-data.png" alt="Extracted Data Table">
+        <div class="img-caption">AI-extracted test result table</div>
+    </div>
 
-<div class="slide">
-  <h2>📈 WHO/CDC Growth Charts</h2>
-  <p>Plot patient growth on standard percentiles using WHO/CDC data. Visual, interactive, and always up to date.</p>
-</div>
 
-<div class="slide">
-  <h2>📊 Adult Height Prediction</h2>
-  <p>Predict final height based on gender, age, bone maturity, and parental height. Powered by Osify’s ML models.</p>
-</div>
+    <!-- Slide 4 -->
+    <div class="slide">
+        <h2>📈 WHO/CDC Growth Charts</h2>
+        <p>Plot patient growth on official percentile curves using WHO/CDC data. Visual and interactive.</p>
+        <img src="media/chart.png" alt="Growth Chart">
+        <div class="img-caption">Child's growth progress on standard curves</div>
+    </div>
 
-<div class="slide">
-  <h2>✨ Bonus Features</h2>
-  <p>
-    🔐 Cloud records<br/>
-    🌍 Multilingual support<br/>
-    👩‍⚕️ Pediatric alerts<br/>
-    📁 EHR integration
-  </p>
-</div>
+    <!-- Slide 5 -->
+    <div class="slide">
+        <h2>📊 Adult Height Prediction</h2>
+        <p>Estimate final adult height using age, gender, bone age, and parental height. Powered by advanced prediction
+            models.</p>
+        <img src="media/ahp-calc.png" alt="Adult Height Calculator">
+        <div class="img-caption">AHP Model Interface</div>
+    </div>
 
-<div class="slide">
-  <h2>Thank You!</h2>
-  <p>OsifyAI — Smart Growth, Powered by AI</p>
-  <p style="font-size: 1.2rem; opacity: 0.6;">© 2025 OsifyAI • osifyai.com</p>
-</div>
+    <!-- Slide 6 -->
+    <div class="slide">
+        <h2>✨ Bonus Features</h2>
+        <p>
+            🔐 Cloud Records & Auto Backup<br />
+            🌍 Multilingual Interface (FA/EN/AR)<br />
+            👩‍⚕️ Pediatric Alert System<br />
+            📁 EHR API Integration Ready
+        </p>
+    </div>
 
-<!-- Navigation bar with counter in center -->
-<div class="nav-bar">
-  <button onclick="prevSlide()">⬅ Previous</button>
-  <div class="counter" id="slide-counter">Page 1 of 7</div>
-  <button onclick="nextSlide()">Next ➡</button>
-</div>
+    <!-- Slide 7 -->
+    <div class="slide">
+        <h2>Thank You!</h2>
+        <p>OsifyAI — Smart Growth, Powered by AI</p>
+        <p style="font-size: 1.2rem; opacity: 0.6;">© 2025 OsifyAI • osifyai.com</p>
+    </div>
 
-<script>
-  const slides = document.querySelectorAll('.slide');
-  const totalSlides = slides.length;
-  let current = 0;
-  let intervalId = null;
-  const counterElement = document.getElementById('slide-counter');
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <button onclick="prevSlide()">⬅ Previous</button>
+        <div class="counter" id="slide-counter">Page 1 of 7</div>
+        <button onclick="nextSlide()">Next ➡</button>
+    </div>
 
-  function updateSlide(index) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    slides[index].classList.add('active');
-    updateCounter(index);
-  }
+    <!-- Slide Logic -->
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const counter = document.getElementById('slide-counter');
+        let current = 0;
+        let intervalId;
 
-  function updateCounter(index) {
-    counterElement.textContent = `Page ${index + 1} of ${totalSlides}`;
-  }
+        function updateSlide(index)
+        {
+            slides.forEach(s => s.classList.remove('active'));
+            slides[index].classList.add('active');
+            counter.textContent = `Page ${index + 1} of ${slides.length}`;
+        }
 
-  function nextSlide() {
-    current = (current + 1) % totalSlides;
-    updateSlide(current);
-    resetTimer();
-  }
+        function nextSlide()
+        {
+            current = (current + 1) % slides.length;
+            updateSlide(current);
+            resetTimer();
+        }
 
-  function prevSlide() {
-    current = (current - 1 + totalSlides) % totalSlides;
-    updateSlide(current);
-    resetTimer();
-  }
+        function prevSlide()
+        {
+            current = (current - 1 + slides.length) % slides.length;
+            updateSlide(current);
+            resetTimer();
+        }
 
-  function resetTimer() {
-    clearInterval(intervalId);
-    intervalId = setInterval(nextSlide, 5000);
-  }
+        function resetTimer()
+        {
+            clearInterval(intervalId);
+            intervalId = setInterval(nextSlide, 5000);
+        }
 
-  // Init
-  updateSlide(current);
-  intervalId = setInterval(nextSlide, 5000);
-</script>
+        updateSlide(current);
+        intervalId = setInterval(nextSlide, 5000);
+    </script>
 
 </body>
+
 </html>
